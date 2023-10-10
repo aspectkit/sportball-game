@@ -5,14 +5,17 @@ using UnityEngine;
 public class ballController : MonoBehaviour
 {
     // Start is called before the first frame update
+    // moveAllowed allows user to move ball when the screen is touched
     bool moveAllowed;
-    bool ballDropped;
-    Collider2D col;
+    // prevents user to move ball when ball is dropped and used to determine if a new ball can be spawned in spawnBall script
+    public bool ballDropped;
+    // gets the rigidbody of the current ball so we can manipulate the gravity of the ball when the user releases from the screen
     private Rigidbody2D _rigidBody;
-    public GameObject ballPrefab;
+
+    // gets the rigidbody of the ball
+    // ball has not dropped yet
     void Start()
     {
-        col = GetComponent<Collider2D>();
         _rigidBody = GetComponent<Rigidbody2D>();
         ballDropped = false;
 
@@ -21,52 +24,47 @@ public class ballController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // checks if user has touched the screen
         if (Input.touchCount > 0)
         {
+            // gets properties of the user's first touch
             Touch touch = Input.GetTouch(0);
             Vector2 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
 
-
+            // when the user initially touches the screen
             if (touch.phase == TouchPhase.Began)
             {
+                // checks to make sure the ball hasnt dropped and prevents the user from manipulating it if it has
                 if (!ballDropped)
                 {
+                    // user can move the ball left and right and the ball immediately moves to where the user initially touched the screen
                     moveAllowed = true;
                     transform.position = new Vector2(touchPosition.x, transform.position.y);
                 }
             }
-
+            // when user holds their finger on the screen
             if (touch.phase == TouchPhase.Moved)
             {
+                // makes sure user hasnt let go of screen 
                 if (moveAllowed)
                 {
+                    // changes position of ball in the x based on where the finger is 
                     transform.position = new Vector2(touchPosition.x, transform.position.y);
                 }
             }
-
+            // if users lets go of the screen
             if (touch.phase == TouchPhase.Ended)
             {
+                // ball cannot be moved
                 moveAllowed = false;
+                // gives the ball gravity
                 _rigidBody.gravityScale = 1;
+                // the ball has now dropped
                 ballDropped = true;
-                
-                StartCoroutine(waitBall());
-                
-                
                 
             }
         }
     }
 
-    IEnumerator waitBall()
-    {
-        yield return new WaitForSeconds(2);
-        createBall();
-    }
-
-    private void createBall()
-    {
-        GameObject b = Instantiate(ballPrefab) as GameObject;
-        b.transform.position = new Vector2(0, 3.5f);
-    }
+    
 }
