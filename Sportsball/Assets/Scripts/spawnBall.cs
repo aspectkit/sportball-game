@@ -9,41 +9,36 @@ public class spawnBall : MonoBehaviour
     public GameObject previousBall;
     // gets the ballController script to grab the ballDropped variable from ballController
     private ballController ball_script;
-    // gets the prefab to be the next ball to spawn and for the user to drop. will change this so its a random prefab 
-    public GameObject ballPrefab;
+    // gets the prefab to be the next ball to spawn and for the user to drop. prefab is random
+    public GameObject marblePrefab;
+    public GameObject golfPrefab;
+    public GameObject billiardPrefab;
+    // list of all the prefabs to choose a random one
+    List<GameObject> ballList = new List<GameObject>();
     
     // start function starts when game starts
-    // ball script is the inital starting ball
-    // starts an endless loop in waitBall
+    // ball script is the inital ballController script attached to the starting ball
+    // add all prefabs to the ball list
     void Start()
     {
         ball_script = previousBall.GetComponent<ballController>();
-        StartCoroutine(waitBall());
+        ballList.Add(marblePrefab);
+        ballList.Add(golfPrefab);
+        ballList.Add(billiardPrefab);
+        
     }
 
     // Update is called once per frame
+    // call createBall function
     void Update()
-    {
-            
-        
-    }
-
-    // an endless loop that stalls for 2 seconds and then calls the createBall function
-    // we stall for 2 seconds here so that a new ball is not immediately spawned right when the previous ball drops
-    // if there is no delay, the ball that is falling will push the new ball without user input 
-    IEnumerator waitBall()
-    {
-        while(true)
-        {
-            yield return new WaitForSeconds(2);
-            createBall();
-        }
-        
+    {  
+        createBall();
     }
 
     // function that creates a new ball once the previous one has been dropped
     // check if the ball has dropped
-    // if it has, create a new ball based on the prefab (will make the prefab random later)
+    // if it has, create a new ball based on the prefab 
+    // prefab is a random one from the list
     // make the initial position the same for all new balls (i'm not sure if this is necessary because the prefab already has the correct position)
     // since the previous ball keeps changing we also need to point the script to the new previous ball otherwise the ballDropped variable will always be true after the initial ball
     // that'll cause an infinite amount of balls to spawn 
@@ -51,7 +46,10 @@ public class spawnBall : MonoBehaviour
     {
         if (ball_script.ballDropped)
         {
-            GameObject b = Instantiate(ballPrefab) as GameObject;
+            int randomBallIndex = Random.Range(0, ballList.Count);
+            Debug.Log($"{randomBallIndex}");
+            GameObject b = Instantiate(ballList[randomBallIndex]) as GameObject;
+            //GameObject b = Instantiate(marblePrefab) as GameObject;
             b.transform.position = new Vector2(0, 3.5f);
             ball_script = b.GetComponent<ballController>();
         }
