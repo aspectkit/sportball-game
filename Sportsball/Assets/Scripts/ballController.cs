@@ -35,7 +35,7 @@ public class ballController : MonoBehaviour
             if (touch.phase == TouchPhase.Began)
             {
                 // checks to make sure the ball hasnt dropped and prevents the user from manipulating it if it has
-                if (!ballDropped)
+                if (transform.position.y == 3.5)
                 {
                     // user can move the ball left and right and the ball immediately moves to where the user initially touched the screen
                     moveAllowed = true;
@@ -59,11 +59,18 @@ public class ballController : MonoBehaviour
                 moveAllowed = false;
                 // gives the ball gravity
                 _rigidBody.gravityScale = 1;
-                // the ball has now dropped
-                ballDropped = true;
+                // the ball has now dropped (give time for the ball to drop before moving on)
+                StartCoroutine(waiter());
+                
                 
             }
         }
+    }
+
+    IEnumerator waiter()
+    {
+        yield return new WaitForSeconds(1);
+        ballDropped = true;
     }
 
     
