@@ -13,6 +13,9 @@ public class spawnBall : MonoBehaviour
     public GameObject marblePrefab;
     public GameObject golfPrefab;
     public GameObject billiardPrefab;
+    public GameObject tennisPrefab;
+    public GameObject cricketPrefab;
+   
     // list of all the prefabs to choose a random one
     List<GameObject> ballList = new List<GameObject>();
     
@@ -25,7 +28,10 @@ public class spawnBall : MonoBehaviour
         ballList.Add(marblePrefab);
         ballList.Add(golfPrefab);
         ballList.Add(billiardPrefab);
-        
+        ballList.Add(tennisPrefab);
+        ballList.Add(cricketPrefab);
+     
+
     }
 
     // Update is called once per frame
