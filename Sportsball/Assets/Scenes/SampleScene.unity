@@ -131,6 +131,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 21661571047097137, guid: b689419c8787db24999e587555e72465, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1767289693874075077, guid: b689419c8787db24999e587555e72465, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3060079698348963594, guid: b689419c8787db24999e587555e72465, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -175,10 +183,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: marbleball
       objectReference: {fileID: 0}
+    - target: {fileID: 6455203389803355239, guid: b689419c8787db24999e587555e72465, type: 3}
+      propertyPath: m_TagString
+      value: marbleball
+      objectReference: {fileID: 0}
+    - target: {fileID: 8671233193427852568, guid: b689419c8787db24999e587555e72465, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6455203389803355239, guid: b689419c8787db24999e587555e72465, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 1459701791}
   m_SourcePrefab: {fileID: 100100000, guid: b689419c8787db24999e587555e72465, type: 3}
 --- !u!1 &519420028
 GameObject:
@@ -296,6 +315,41 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6455203389803355239, guid: b689419c8787db24999e587555e72465, type: 3}
   m_PrefabInstance: {fileID: 509013401}
   m_PrefabAsset: {fileID: 0}
+--- !u!58 &1459701791
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1459701785}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.55}
+  serializedVersion: 2
+  m_Radius: 7.19
 --- !u!1 &1693293066
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,7 +364,7 @@ GameObject:
   - component: {fileID: 1693293069}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -468,7 +522,7 @@ GameObject:
   - component: {fileID: 1702757023}
   m_Layer: 0
   m_Name: right_wall
-  m_TagString: Untagged
+  m_TagString: rightwall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -626,7 +680,7 @@ GameObject:
   - component: {fileID: 1799484151}
   m_Layer: 0
   m_Name: left_wall
-  m_TagString: Untagged
+  m_TagString: leftwall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

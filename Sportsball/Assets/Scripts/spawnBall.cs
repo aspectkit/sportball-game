@@ -50,10 +50,12 @@ public class spawnBall : MonoBehaviour
     // that'll cause an infinite amount of balls to spawn 
     private void createBall()
     {
+        Debug.Log("Here!");
+        Debug.Log(ball_script.ballDropped);
         if (ball_script.ballDropped)
         {
             int randomBallIndex = Random.Range(0, ballList.Count);
-            Debug.Log($"{randomBallIndex}");
+            //Debug.Log($"{randomBallIndex}");
             GameObject b = Instantiate(ballList[randomBallIndex]) as GameObject;
             //GameObject b = Instantiate(marblePrefab) as GameObject;
             b.transform.position = new Vector2(0, 3.5f);

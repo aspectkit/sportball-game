@@ -13,9 +13,11 @@ GameObject:
   - component: {fileID: 7363884931767937479}
   - component: {fileID: 5443219827901698792}
   - component: {fileID: 8978758550411564049}
+  - component: {fileID: -2968705698978488944}
+  - component: {fileID: -4217452800683078745}
   m_Layer: 0
   m_Name: soccerball
-  m_TagString: Untagged
+  m_TagString: soccerball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -162,3 +164,51 @@ CircleCollider2D:
   m_Offset: {x: 0.056442346, y: -0.52679235}
   serializedVersion: 2
   m_Radius: 7.1933694
+--- !u!58 &-2968705698978488944
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 601785145860812354}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.05644235, y: -0.5267923}
+  serializedVersion: 2
+  m_Radius: 7.193369
+--- !u!114 &-4217452800683078745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 601785145860812354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e3c2152f9207794dacfc1a2aa3124a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextBallPrefab: {fileID: 2927871266092925630, guid: 59db719299c724549b05b6f6a6d418a8, type: 3}
