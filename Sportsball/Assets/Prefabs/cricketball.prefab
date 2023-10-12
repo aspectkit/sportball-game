@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 2835120397903923422}
   - component: {fileID: 7771411130060653660}
   - component: {fileID: 8422350398749289068}
-  - component: {fileID: -4177963907898773454}
   m_Layer: 0
   m_Name: cricketball
   m_TagString: cricketball
@@ -31,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 6812629496272495563}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.5, z: 0}
+  m_LocalPosition: {x: 0, y: 4, z: 0}
   m_LocalScale: {x: 0.07, y: 0.07, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -102,6 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballDropped: 0
+  nextBallPrefab: {fileID: 7843072202687800318, guid: 05da1da8dfb0fe340969e3a972e91346, type: 3}
 --- !u!50 &2835120397903923422
 Rigidbody2D:
   serializedVersion: 4
@@ -199,16 +199,3 @@ CircleCollider2D:
   m_Offset: {x: 0.1416045, y: -0.4484177}
   serializedVersion: 2
   m_Radius: 7.251579
---- !u!114 &-4177963907898773454
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6812629496272495563}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e3c2152f9207794dacfc1a2aa3124a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nextBallPrefab: {fileID: 7843072202687800318, guid: 05da1da8dfb0fe340969e3a972e91346, type: 3}

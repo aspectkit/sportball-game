@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8957083165234275723}
   - component: {fileID: 1744458856433910212}
   - component: {fileID: -7254109588301467773}
-  - component: {fileID: -5269969395017849129}
   - component: {fileID: -8115190862982939193}
   m_Layer: 0
   m_Name: billiardball
@@ -31,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 4411877135966819147}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.5, z: 0}
+  m_LocalPosition: {x: 0, y: 4, z: 0}
   m_LocalScale: {x: 0.05, y: 0.05, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -164,18 +163,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballDropped: 0
---- !u!114 &-5269969395017849129
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4411877135966819147}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e3c2152f9207794dacfc1a2aa3124a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   nextBallPrefab: {fileID: 4197475907925852596, guid: e31192d1cba45e14da76c6847ea45589, type: 3}
 --- !u!58 &-8115190862982939193
 CircleCollider2D:

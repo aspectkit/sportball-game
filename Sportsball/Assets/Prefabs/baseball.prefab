@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 6811883471110784713}
   - component: {fileID: 9156901384562454549}
   - component: {fileID: 8437455947224741136}
-  - component: {fileID: 7811040601321585507}
   - component: {fileID: 6340184718613768005}
   m_Layer: 0
   m_Name: baseball
@@ -31,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 7843072202687800318}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.5, z: 0}
+  m_LocalPosition: {x: 0, y: 4, z: 0}
   m_LocalScale: {x: 0.08, y: 0.08, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -164,18 +163,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballDropped: 0
---- !u!114 &7811040601321585507
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7843072202687800318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e3c2152f9207794dacfc1a2aa3124a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   nextBallPrefab: {fileID: 1790077369529932533, guid: 0cfb9f5a23798a343bd664ffbcc45d6d, type: 3}
 --- !u!58 &6340184718613768005
 CircleCollider2D:
