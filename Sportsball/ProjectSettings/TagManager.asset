@@ -19,6 +19,7 @@ TagManager:
   - Ground
   - leftwall
   - rightwall
+  - endline
   layers:
   - Default
   - TransparentFX

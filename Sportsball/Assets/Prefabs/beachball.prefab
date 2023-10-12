@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 2832449910696544173}
   - component: {fileID: 9203500211298594863}
   - component: {fileID: 392951448530415800}
-  - component: {fileID: 4981538048590406874}
   m_Layer: 0
   m_Name: beachball
   m_TagString: beachball
@@ -31,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 6775137321700331033}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.5, z: 0}
+  m_LocalPosition: {x: 0, y: 4, z: 0}
   m_LocalScale: {x: 0.15, y: 0.15, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -102,6 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballDropped: 0
+  nextBallPrefab: {fileID: 6775137321700331033}
 --- !u!50 &2832449910696544173
 Rigidbody2D:
   serializedVersion: 4
@@ -199,16 +199,3 @@ CircleCollider2D:
   m_Offset: {x: 0.06628275, y: -0.5523546}
   serializedVersion: 2
   m_Radius: 7.181363
---- !u!114 &4981538048590406874
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6775137321700331033}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e3c2152f9207794dacfc1a2aa3124a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nextBallPrefab: {fileID: 0}

@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 5836091498685062347}
   - component: {fileID: 683051259207337568}
   - component: {fileID: 260940294670891736}
-  - component: {fileID: 6810891248901651072}
   m_Layer: 0
   m_Name: basketball
   m_TagString: basketball
@@ -31,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 2927871266092925630}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.5, z: 0}
+  m_LocalPosition: {x: 0, y: 4, z: 0}
   m_LocalScale: {x: 0.12, y: 0.12, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -164,6 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballDropped: 0
+  nextBallPrefab: {fileID: 6775137321700331033, guid: cca8c7ba4767ff347ab4417f3b197304, type: 3}
 --- !u!58 &260940294670891736
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -199,16 +199,3 @@ CircleCollider2D:
   m_Offset: {x: 0.1512731, y: -0.5186508}
   serializedVersion: 2
   m_Radius: 7.177528
---- !u!114 &6810891248901651072
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2927871266092925630}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e3c2152f9207794dacfc1a2aa3124a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nextBallPrefab: {fileID: 6775137321700331033, guid: cca8c7ba4767ff347ab4417f3b197304, type: 3}

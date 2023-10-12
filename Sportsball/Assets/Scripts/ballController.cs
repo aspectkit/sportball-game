@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ballController : MonoBehaviour
 {
@@ -11,19 +12,30 @@ public class ballController : MonoBehaviour
     public bool ballDropped;
     // gets the rigidbody of the current ball so we can manipulate the gravity of the ball when the user releases from the screen
     private Rigidbody2D _rigidBody;
-
+    private bool isColliding;
+    public GameObject nextBallPrefab;
+    private GameObject b;
+    private bool merged = false;
     // gets the rigidbody of the ball
     // ball has not dropped yet
     void Start()
     {
         _rigidBody = GetComponent<Rigidbody2D>();
-        ballDropped = false;
+        if (merged)
+        {
+            ballDropped = true;
+        } else
+        {
+            ballDropped = false;
+        }
+        
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        isColliding = false;
         // checks if user has touched the screen
         if (Input.touchCount > 0)
         {
@@ -35,7 +47,7 @@ public class ballController : MonoBehaviour
             if (touch.phase == TouchPhase.Began)
             {
                 // checks to make sure the ball hasnt dropped and prevents the user from manipulating it if it has
-                if (transform.position.y == 3.5)
+                if (transform.position.y == 4)
                 {
                     // user can move the ball left and right and the ball immediately moves to where the user initially touched the screen
                     moveAllowed = true;
@@ -58,20 +70,65 @@ public class ballController : MonoBehaviour
                 // ball cannot be moved
                 moveAllowed = false;
                 // gives the ball gravity
-                _rigidBody.gravityScale = 1;
+                _rigidBody.gravityScale = 2f;
                 // the ball has now dropped (give time for the ball to drop before moving on)
                 StartCoroutine(waiter());
                 
                 
             }
         }
+        if (transform.position.y >= 2 && ballDropped)
+        {
+            SceneManager.LoadScene("SampleScene");
+        }
     }
 
     IEnumerator waiter()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
         ballDropped = true;
     }
 
-    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (isColliding)
+        {
+            return;
+        }
+        isColliding = true;
+
+        if (collision.gameObject.tag == gameObject.tag && gameObject.tag != "beachball")
+        {
+            if (gameObject.GetInstanceID() > collision.gameObject.GetInstanceID())
+            {
+                Debug.Log("here");
+                //Instantiate(golfPrefab, transform.position, Quaternion.identity);
+                b = Instantiate(nextBallPrefab) as GameObject;
+                b.GetComponent<ballController>().merged = true;
+                b.GetComponent<ballController>().ballDropped = true;
+                b.transform.position = transform.position;
+                b.GetComponent<Rigidbody2D>().gravityScale = 2f;
+                if (b.transform.position.y >= 2 && b.GetComponent<ballController>().ballDropped)
+                {
+                    SceneManager.LoadScene("SampleScene");
+                }
+                gameObject.GetComponent<ballController>().ballDropped = true;
+                collision.gameObject.GetComponent<ballController>().ballDropped = true;
+                Destroy(collision.gameObject);
+                Destroy(gameObject);
+            } 
+            
+
+
+        }
+        else if (collision.gameObject.tag == gameObject.tag && gameObject.tag == "beachball")
+        {
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
+    }
+
+   
+
+
 }
