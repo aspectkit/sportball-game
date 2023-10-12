@@ -29,8 +29,6 @@ public class mergeBall : MonoBehaviour
         if (collision.gameObject.tag == gameObject.tag && gameObject.tag != "beachball")
         {
             //Debug.Log(gameObject.GetInstanceID());
-            Destroy(collision.gameObject);
-            Destroy(gameObject);
             if (gameObject.GetInstanceID() > collision.gameObject.GetInstanceID())
             {
                 //Instantiate(golfPrefab, transform.position, Quaternion.identity);
@@ -38,6 +36,9 @@ public class mergeBall : MonoBehaviour
                 b.transform.position = transform.position;
                 b.GetComponent<Rigidbody2D>().gravityScale = 1;
             }
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+           
             
         } else if (collision.gameObject.tag == gameObject.tag && gameObject.tag == "beachball")
         {
@@ -45,4 +46,5 @@ public class mergeBall : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
 }
