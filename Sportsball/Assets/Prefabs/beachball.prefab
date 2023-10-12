@@ -13,9 +13,11 @@ GameObject:
   - component: {fileID: 5908645395826331670}
   - component: {fileID: 2832449910696544173}
   - component: {fileID: 9203500211298594863}
+  - component: {fileID: 392951448530415800}
+  - component: {fileID: 4981538048590406874}
   m_Layer: 0
   m_Name: beachball
-  m_TagString: Untagged
+  m_TagString: beachball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -162,3 +164,51 @@ CircleCollider2D:
   m_Offset: {x: 0.06628275, y: -0.55235463}
   serializedVersion: 2
   m_Radius: 7.1813626
+--- !u!58 &392951448530415800
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6775137321700331033}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.06628275, y: -0.5523546}
+  serializedVersion: 2
+  m_Radius: 7.181363
+--- !u!114 &4981538048590406874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6775137321700331033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e3c2152f9207794dacfc1a2aa3124a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextBallPrefab: {fileID: 0}

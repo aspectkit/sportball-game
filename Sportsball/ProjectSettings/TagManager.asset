@@ -5,6 +5,20 @@ TagManager:
   serializedVersion: 2
   tags:
   - testBall
+  - baseball
+  - basketball
+  - beachball
+  - billiardball
+  - bowlingball
+  - cricketball
+  - golfball
+  - marbleball
+  - soccerball
+  - tennisball
+  - volleyball
+  - Ground
+  - leftwall
+  - rightwall
   layers:
   - Default
   - TransparentFX
