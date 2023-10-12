@@ -50,6 +50,8 @@ public class spawnBall : MonoBehaviour
     // that'll cause an infinite amount of balls to spawn 
     private void createBall()
     {
+        Debug.Log("Here!");
+        Debug.Log(ball_script.ballDropped);
         if (ball_script.ballDropped)
         {
             int randomBallIndex = Random.Range(0, ballList.Count);
