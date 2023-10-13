@@ -102,6 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballDropped: 0
   nextBallPrefab: {fileID: 2927871266092925630, guid: 59db719299c724549b05b6f6a6d418a8, type: 3}
+  gameOverPanel: {fileID: 8374043299020547934, guid: acb85437b16b87848b4e97105955eb00, type: 3}
 --- !u!50 &5443219827901698792
 Rigidbody2D:
   serializedVersion: 4

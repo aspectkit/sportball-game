@@ -102,6 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballDropped: 0
   nextBallPrefab: {fileID: 601785145860812354, guid: f2bd0fad7a752744795551d2fa94e73a, type: 3}
+  gameOverPanel: {fileID: 8374043299020547934, guid: acb85437b16b87848b4e97105955eb00, type: 3}
 --- !u!58 &6301774557386586935
 CircleCollider2D:
   m_ObjectHideFlags: 0

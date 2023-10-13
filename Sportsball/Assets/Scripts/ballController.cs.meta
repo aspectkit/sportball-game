@@ -3,7 +3,9 @@ guid: 25756625f8f7a254ca5664ba29603610
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - nextBallPrefab: {instanceID: 0}
+  - gameOverPanel: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
