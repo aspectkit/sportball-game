@@ -16,6 +16,7 @@ public class ballController : MonoBehaviour
     public GameObject nextBallPrefab;
     private GameObject b;
     private bool merged = false;
+
     // gets the rigidbody of the ball
     // ball has not dropped yet
     void Start()
@@ -79,7 +80,7 @@ public class ballController : MonoBehaviour
         }
         if (transform.position.y >= 2 && ballDropped)
         {
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene("gameover");
         }
     }
 
@@ -110,7 +111,7 @@ public class ballController : MonoBehaviour
                 b.GetComponent<Rigidbody2D>().gravityScale = 2f;
                 if (b.transform.position.y >= 2 && b.GetComponent<ballController>().ballDropped)
                 {
-                    SceneManager.LoadScene("SampleScene");
+                    SceneManager.LoadScene("gameover");
                 }
                 gameObject.GetComponent<ballController>().ballDropped = true;
                 collision.gameObject.GetComponent<ballController>().ballDropped = true;
@@ -129,6 +130,8 @@ public class ballController : MonoBehaviour
     }
 
    
+
+
 
 
 }
