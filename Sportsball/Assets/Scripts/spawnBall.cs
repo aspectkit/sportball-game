@@ -51,31 +51,7 @@ public class spawnBall : MonoBehaviour
             ball_script = b.GetComponent<ballController>();
         }
 
-        //List<GameObject> currentBalls = new List<GameObject>();
-        //List<GameObject> currentMarble = new List<GameObject>(GameObject.FindGameObjectsWithTag("marbleball"));
-        //List<GameObject> currentGolf = new List<GameObject>(GameObject.FindGameObjectsWithTag("golfball"));
-        //List<GameObject> currentBilliard = new List<GameObject>(GameObject.FindGameObjectsWithTag("billiardball"));
-        //List<GameObject> currentTennis = new List<GameObject>(GameObject.FindGameObjectsWithTag("tennisball"));
-        //List<GameObject> currentCricket = new List<GameObject>(GameObject.FindGameObjectsWithTag("cricketball"));
-        //List<GameObject> currentBaseball = new List<GameObject>(GameObject.FindGameObjectsWithTag("baseball"));
-        //List<GameObject> currentVolleyball = new List<GameObject>(GameObject.FindGameObjectsWithTag("volleyball"));
-        //List<GameObject> currentBowlingball = new List<GameObject>(GameObject.FindGameObjectsWithTag("bowlingball"));
-        //List<GameObject> currentSoccerball = new List<GameObject>(GameObject.FindGameObjectsWithTag("soccerball"));
-        //List<GameObject> currentBasketball = new List<GameObject>(GameObject.FindGameObjectsWithTag("basketball"));
-        //List<GameObject> currentBeachball = new List<GameObject>(GameObject.FindGameObjectsWithTag("beachball"));
-
-        //currentBalls = currentMarble.Concat(currentGolf).Concat(currentBilliard).Concat(currentTennis).Concat(currentCricket).Concat(currentBaseball).Concat(currentVolleyball).Concat(currentBowlingball).Concat(currentSoccerball).Concat(currentBasketball).Concat(currentBeachball).ToList();
         
-        //foreach (var ball in currentBalls)
-        //{
-        //    if (ball.transform.position.y > 2 && ball.GetComponent<ballController>().ballDropped) 
-        //    {
-        //        SceneManager.LoadScene("SampleScene");
-        //    }
-
-
-
-        //}
 
 
 
@@ -86,7 +62,6 @@ public class spawnBall : MonoBehaviour
     // check if the ball has dropped
     // if it has, create a new ball based on the prefab 
     // prefab is a random one from the list
-    // make the initial position the same for all new balls (i'm not sure if this is necessary because the prefab already has the correct position)
     // since the previous ball keeps changing we also need to point the script to the new previous ball otherwise the ballDropped variable will always be true after the initial ball
     // that'll cause an infinite amount of balls to spawn 
 

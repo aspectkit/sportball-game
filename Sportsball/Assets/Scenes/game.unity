@@ -439,7 +439,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &509013401
+--- !u!1001 &302526703
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -447,22 +447,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -6343586385696535553, guid: b689419c8787db24999e587555e72465, type: 3}
-      propertyPath: gameOverPanel
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 21661571047097137, guid: b689419c8787db24999e587555e72465, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 6200000, guid: e7abd137a4f2555438978cf599fcd216, type: 2}
-    - target: {fileID: 21661571047097137, guid: b689419c8787db24999e587555e72465, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1767289693874075077, guid: b689419c8787db24999e587555e72465, type: 3}
-      propertyPath: m_BodyType
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3060079698348963594, guid: b689419c8787db24999e587555e72465, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -503,29 +487,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4500271339480783933, guid: b689419c8787db24999e587555e72465, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6455203389803355239, guid: b689419c8787db24999e587555e72465, type: 3}
       propertyPath: m_Name
       value: marbleball
       objectReference: {fileID: 0}
-    - target: {fileID: 6455203389803355239, guid: b689419c8787db24999e587555e72465, type: 3}
-      propertyPath: m_TagString
-      value: marbleball
-      objectReference: {fileID: 0}
-    - target: {fileID: 8671233193427852568, guid: b689419c8787db24999e587555e72465, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6455203389803355239, guid: b689419c8787db24999e587555e72465, type: 3}
-      insertIndex: 3
-      addedObject: {fileID: 1459701791}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b689419c8787db24999e587555e72465, type: 3}
 --- !u!1 &519420028
 GameObject:
@@ -632,7 +601,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f0dcb17741522a4eb91139c9c2b0ee9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  previousBall: {fileID: 1459701785}
+  previousBall: {fileID: 1511531078}
   marblePrefab: {fileID: 6455203389803355239, guid: b689419c8787db24999e587555e72465, type: 3}
   golfPrefab: {fileID: 8041949391411548918, guid: a51f8a55461dc894aacb2dd0750bd852, type: 3}
   billiardPrefab: {fileID: 4411877135966819147, guid: 7712ab9d5ee61b34fa7381a3452d6094, type: 3}
@@ -964,54 +933,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1459701785 stripped
+--- !u!1 &1511531078 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6455203389803355239, guid: b689419c8787db24999e587555e72465, type: 3}
-  m_PrefabInstance: {fileID: 509013401}
+  m_PrefabInstance: {fileID: 302526703}
   m_PrefabAsset: {fileID: 0}
---- !u!58 &1459701791
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1459701785}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.55}
-  serializedVersion: 2
-  m_Radius: 7.19
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
-  - {fileID: 509013401}
   - {fileID: 1073684715}
   - {fileID: 122525475}
   - {fileID: 802783446}
   - {fileID: 58438796}
   - {fileID: 1181688036}
+  - {fileID: 302526703}
