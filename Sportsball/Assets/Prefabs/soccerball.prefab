@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: ca89088acd6e1cf4bba44bc69877f826, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -102,6 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballDropped: 0
   nextBallPrefab: {fileID: 2927871266092925630, guid: 59db719299c724549b05b6f6a6d418a8, type: 3}
+  lineMarkerPrefab: {fileID: 5421302510125890304, guid: 6ede711d6b7d1e748ba3637353cf7c4f, type: 3}
 --- !u!50 &5443219827901698792
 Rigidbody2D:
   serializedVersion: 4

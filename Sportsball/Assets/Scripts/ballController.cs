@@ -16,7 +16,8 @@ public class ballController : MonoBehaviour
     public GameObject nextBallPrefab;
     private GameObject b;
     private bool merged = false;
-
+    public GameObject lineMarkerPrefab;
+    private GameObject lineMarker;
     // gets the rigidbody of the ball
     // ball has not dropped yet or merged ball has already dropped
     void Start()
@@ -53,6 +54,9 @@ public class ballController : MonoBehaviour
                     // user can move the ball left and right and the ball immediately moves to where the user initially touched the screen
                     moveAllowed = true;
                     transform.position = new Vector2(touchPosition.x, transform.position.y);
+                    lineMarker = Instantiate(lineMarkerPrefab) as GameObject;
+                    lineMarker.transform.position = new Vector2(touchPosition.x, -0.5f);
+                    
                 }
             }
             // when user holds their finger on the screen
@@ -63,6 +67,7 @@ public class ballController : MonoBehaviour
                 {
                     // changes position of ball in the x based on where the finger is 
                     transform.position = new Vector2(touchPosition.x, transform.position.y);
+                    lineMarker.transform.position = new Vector2(touchPosition.x, -0.5f);
                 }
             }
             // if users lets go of the screen
@@ -72,6 +77,8 @@ public class ballController : MonoBehaviour
                 moveAllowed = false;
                 // gives the ball gravity
                 _rigidBody.gravityScale = 2f;
+                // remove lineMarker
+                Destroy(lineMarker);
                 // the ball has now dropped (give time for the ball to drop before moving on)
                 StartCoroutine(waiter());
                 
