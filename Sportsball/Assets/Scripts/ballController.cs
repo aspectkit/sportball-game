@@ -18,7 +18,7 @@ public class ballController : MonoBehaviour
     private bool merged = false;
 
     // gets the rigidbody of the ball
-    // ball has not dropped yet
+    // ball has not dropped yet or merged ball has already dropped
     void Start()
     {
         _rigidBody = GetComponent<Rigidbody2D>();
@@ -78,6 +78,7 @@ public class ballController : MonoBehaviour
                 
             }
         }
+        // if any ball is over the line the game is over
         if (transform.position.y >= 2 && ballDropped)
         {
             SceneManager.LoadScene("gameover");
@@ -90,6 +91,15 @@ public class ballController : MonoBehaviour
         ballDropped = true;
     }
 
+    // when a collision happens, check if the balls are the same through tags
+    // since every ball has this script, we only want to create a new ball once, so we pick one to create the new ball based on the instance ID
+    // make the new ball, add a merged variable to let start function know this ball has already dropped
+    // make the pos of the new ball the same as one of the balls that are merging. Increase the y pos just a little bit to give a better effect of combining and confirm any new ontriggerenter collisions
+    // give the new ball gravity
+    // check to make sure new merged ball isnt over the game over line
+    // make sure the 2 balls before disappearing have their balldropped boolean set to true or else a new ball will not spawn
+    // delete the two balls that collided
+    // if the two colliding balls are beachballs, just delete them
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (isColliding)
@@ -107,7 +117,7 @@ public class ballController : MonoBehaviour
                 b = Instantiate(nextBallPrefab) as GameObject;
                 b.GetComponent<ballController>().merged = true;
                 b.GetComponent<ballController>().ballDropped = true;
-                b.transform.position = transform.position;
+                b.transform.position = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y + 0.5f);
                 b.GetComponent<Rigidbody2D>().gravityScale = 2f;
                 if (b.transform.position.y >= 2 && b.GetComponent<ballController>().ballDropped)
                 {
@@ -124,6 +134,8 @@ public class ballController : MonoBehaviour
         }
         else if (collision.gameObject.tag == gameObject.tag && gameObject.tag == "beachball")
         {
+            gameObject.GetComponent<ballController>().ballDropped = true;
+            collision.gameObject.GetComponent<ballController>().ballDropped = true;
             Destroy(collision.gameObject);
             Destroy(gameObject);
         }

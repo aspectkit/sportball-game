@@ -120,9 +120,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.14455467, y: -0.53691936}
+  m_Offset: {x: 0.07913187, y: -0.5063534}
   serializedVersion: 2
-  m_Radius: 7.1389966
+  m_Radius: 7.111624
 --- !u!50 &9156901384562454549
 Rigidbody2D:
   serializedVersion: 4
@@ -164,7 +164,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballDropped: 0
   nextBallPrefab: {fileID: 1790077369529932533, guid: 0cfb9f5a23798a343bd664ffbcc45d6d, type: 3}
-  gameOverPanel: {fileID: 8374043299020547934, guid: acb85437b16b87848b4e97105955eb00, type: 3}
 --- !u!58 &6340184718613768005
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -197,6 +196,6 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.1445547, y: -0.5369194}
+  m_Offset: {x: 0.07913187, y: -0.5063534}
   serializedVersion: 2
-  m_Radius: 7.138997
+  m_Radius: 7.111624
